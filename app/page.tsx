@@ -34,8 +34,9 @@ export default function Home() {
   }
 
   return (
-    // 使用内联 CSS 中的 .gradient-bg-main 类
-    <div className="min-h-screen"> {/* 简化为 min-h-screen，背景由 layout.tsx 中的内联 CSS 控制 */}
+    // 使用一个最外层的 div 包裹所有内容
+    // min-h-screen 保持不变，背景由 layout.tsx 中的 body 标签控制
+    <div className="min-h-screen">
       <Navigation
         user={user}
         onLogin={() => { setAuthMode('login'); setShowAuthModal(true); }}
@@ -48,23 +49,23 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex justify-center mb-6">
-              {/* 使用内联 CSS 中的 .gradient-btn 类 */}
+              {/* 使用自定义的 gradient-btn 类 */}
               <div className="gradient-btn text-white border-0 text-sm px-4 py-2 rounded-full inline-flex items-center">
                 <Sparkles className="w-4 h-4 mr-2" />
-                AI 驱动的儿童绘本创作
+                AI 驱动的兒童繪本創作
               </div>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
-              让想象力
-              {/* 使用内联 CSS 中的 .gradient-text 类 */}
+              讓想像力
+              {/* 使用自定义的 gradient-text 类 */}
               <span className="gradient-text">
-                无限绘本
+                無限繪本
               </span>
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              用 AI 的魔力，将您的创意瞬间变成专业的儿童绘本。精美插画、专业配音、多语言支持，让每个故事都成为孩子们的珍藏。
+              用 AI 的魔力，將您的創意瞬間變成專業的兒童繪本。精美插畫、專業配音、多語言支持，讓每個故事都成為孩子們的珍藏。
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -73,7 +74,7 @@ export default function Home() {
                 className="gradient-btn px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 <Sparkles className="w-5 h-5 mr-2" />
-                开始创作故事
+                開始創作故事
               </Button>
 
               <Button
@@ -81,7 +82,7 @@ export default function Home() {
                 className="border-2 border-orange-300 text-orange-600 hover:bg-orange-50 px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <Play className="w-5 h-5 mr-2" />
-                观看演示
+                觀看演示
               </Button>
             </div>
           </div>
@@ -92,25 +93,25 @@ export default function Home() {
       <section className="py-20 bg-white/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">为什么选择我们？</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">為什麼選擇我們？</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              结合最新的 AI 技术，为您提供专业级别的儿童绘本创作体验
+              結合最新的 AI 技術，為您提供專業級別的兒童繪本創作體驗
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* 使用内联 CSS 中的 .card 类 */}
+            {/* 使用自定义的 .card 类 */}
             <div className="card">
               <CardHeader className="text-center">
-                {/* 使用内联 CSS 中的 .gradient-btn 类 */}
+                {/* 使用自定义的 .gradient-btn 类 */}
                 <div className="w-16 h-16 mx-auto mb-4 gradient-btn rounded-full flex items-center justify-center">
                   <Sparkles className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl">AI 智能创作</CardTitle>
+                <CardTitle className="text-xl">AI 智能創作</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-center">
-                  强大的 AI 引擎，根据您的创意生成独特的故事情节和人物设定
+                  強大的 AI 引擎，根據您的創意生成獨特的故事情節和人物設定
                 </p>
               </CardContent>
             </div>
@@ -120,11 +121,11 @@ export default function Home() {
                 <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-full flex items-center justify-center">
                   <Palette className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl">精美插画</CardTitle>
+                <CardTitle className="text-xl">精美插畫</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-center">
-                  专业级别的插画生成，多种艺术风格可选，让每个故事都栩栩如生
+                  專業級別的插畫生成，多種藝術風格可選，讓每個故事都栩栩如生
                 </p>
               </CardContent>
             </Card>
@@ -134,11 +135,11 @@ export default function Home() {
                 <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
                   <Mic className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl">专业配音</CardTitle>
+                <CardTitle className="text-xl">專業配音</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-center">
-                  多种语音角色可选，自然流畅的语音合成，让故事更加生动有趣
+                  多種語音角色可選，自然流暢的語音合成，讓故事更加生動有趣
                 </p>
               </CardContent>
             </Card>
@@ -148,11 +149,11 @@ export default function Home() {
                 <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
                   <Globe className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl">多语言支持</CardTitle>
+                <CardTitle className="text-xl">多語言支持</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-center">
-                  支持多种语言创作，让全世界的孩子都能享受到优质的故事内容
+                  支持多種語言創作，讓全世界的孩子都能享受到優質的故事內容
                 </p>
               </CardContent>
             </Card>
@@ -164,18 +165,18 @@ export default function Home() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">简单四步，完成创作</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">簡單四步，完成創作</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              从创意到成品，只需几分钟时间
+              從創意到成品，只需幾分鐘時間
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { step: "1", title: "输入创意", desc: "描述你的故事主题和想法", icon: Wand2 },
-              { step: "2", title: "选择风格", desc: "选择插画风格和语音类型", icon: Palette },
-              { step: "3", title: "AI 生成", desc: "AI 自动生成故事和插画", icon: Sparkles },
-              { step: "4", title: "完成作品", desc: "获得专业的儿童绘本作品", icon: Heart }
+              { step: "1", title: "輸入創意", desc: "描述你的故事主題和想法", icon: Wand2 },
+              { step: "2", title: "選擇風格", desc: "選擇插畫風格和語音類型", icon: Palette },
+              { step: "3", title: "AI 生成", desc: "AI 自動生成故事和插畫", icon: Sparkles },
+              { step: "4", title: "完成作品", desc: "獲得專業的兒童繪本作品", icon: Heart }
             ].map((item, index) => (
               <div key={index} className="text-center relative">
                 <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center">
@@ -198,31 +199,30 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">精彩案例展示</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              看看其他创作者都制作了什么样的精彩作品
+              看看其他創作者都製作了什麼樣的精彩作品
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "小兔子的太空冒险",
-                description: "一个关于勇敢小兔子探索太空的温馨故事",
-                // 保持占位符图片，避免 Pexels 链接失效问题
+                title: "小兔子的太空冒險",
+                description: "一個關於勇敢小兔子探索太空的溫馨故事",
                 image: "https://placehold.co/500x300/E0E0E0/000000?text=Placeholder+1"
               },
               {
                 title: "魔法森林的秘密",
-                description: "神奇的森林里住着会说话的动物朋友们",
+                description: "神奇的森林裡住著會說話的動物朋友們",
                 image: "https://placehold.co/500x300/E0E0E0/000000?text=Placeholder+2"
               },
               {
-                title: "彩虹桥上的小公主",
-                description: "善良的小公主用爱心拯救了整个王国",
+                title: "彩虹橋上的小公主",
+                description: "善良的小公主用愛心拯救了整個王國",
                 image: "https://placehold.co/500x300/E0E0E0/000000?text=Placeholder+3"
               }
             ].map((example, index) => (
-              // 使用内联 CSS 中的 .card 类
-              <div key={index} className="card overflow-hidden"> {/* 替换 Card 组件为 div，并应用 .card 类 */}
+              // 使用自定义的 .card 类
+              <div key={index} className="card overflow-hidden">
                 <div className="aspect-video bg-gradient-to-br from-pink-200 to-orange-200 relative">
                   <img
                     src={example.image}
@@ -245,20 +245,20 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 gradient-cta"> {/* 使用内联 CSS 中的 .gradient-cta 类 */}
+      <section className="py-20 gradient-cta"> {/* 使用自定义的 .gradient-cta 类 */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
-            准备好创作您的第一个故事了吗？
+            準備好創作您的第一個故事了嗎？
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            加入我们，让 AI 帮助您创作出令人难忘的儿童绘本
+            加入我們，讓 AI 幫助您創作齣令人難忘的兒童繪本
           </p>
           <Button
             onClick={handleStartCreating}
             className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
             <Sparkles className="w-5 h-5 mr-2" />
-            立即开始创作
+            立即開始創作
           </Button>
         </div>
       </section>
@@ -269,42 +269,42 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent">
-                绘本 AI
+                繪本 AI
               </h3>
               <p className="text-gray-400">
-                让每个孩子都能享受到专业级别的儿童绘本，用 AI 技术点亮想象力。
+                讓每個孩子都能享受到專業級別的兒童繪本，用 AI 技術點亮想像力。
               </p>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-4">产品</h4>
+              <h4 className="text-lg font-semibold mb-4">產品</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">故事生成器</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">插画创作</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">语音合成</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">多语言支持</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">插畫創作</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">語音合成</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">多語言支持</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">支持</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">帮助中心</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">在线客服</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">联系我们</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">意见反馈</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">幫助中心</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">在線客服</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">聯繫我們</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">意見反饋</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-4">关于我们</h4>
+              <h4 className="text-lg font-semibold mb-4">關於我們</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">公司介绍</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">隐私政策</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">服务条款</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">公司介紹</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">隱私政策</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">服務條款</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">支付方式</a></li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 绘本 AI. 保留所有权利。</p>
+            <p>&copy; 2024 繪本 AI. 保留所有權利。</p>
           </div>
         </div>
       </footer>
