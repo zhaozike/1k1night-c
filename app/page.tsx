@@ -34,7 +34,8 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-blue-50">
+    // 使用内联 CSS 中的 .gradient-bg-main 类
+    <div className="min-h-screen"> {/* 简化为 min-h-screen，背景由 layout.tsx 中的内联 CSS 控制 */}
       <Navigation
         user={user}
         onLogin={() => { setAuthMode('login'); setShowAuthModal(true); }}
@@ -47,15 +48,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex justify-center mb-6">
-              <Badge className="bg-gradient-to-r from-pink-500 to-orange-500 text-white border-0 text-sm px-4 py-2">
+              {/* 使用内联 CSS 中的 .gradient-btn 类 */}
+              <div className="gradient-btn text-white border-0 text-sm px-4 py-2 rounded-full inline-flex items-center">
                 <Sparkles className="w-4 h-4 mr-2" />
                 AI 驱动的儿童绘本创作
-              </Badge>
+              </div>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
               让想象力
-              <span className="bg-gradient-to-r from-pink-500 via-orange-500 to-blue-500 bg-clip-text text-transparent">
+              {/* 使用内联 CSS 中的 .gradient-text 类 */}
+              <span className="gradient-text">
                 无限绘本
               </span>
             </h1>
@@ -67,7 +70,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={handleStartCreating}
-                className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="gradient-btn px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 <Sparkles className="w-5 h-5 mr-2" />
                 开始创作故事
@@ -96,9 +99,11 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-br from-pink-50 to-pink-100">
+            {/* 使用内联 CSS 中的 .card 类 */}
+            <div className="card">
               <CardHeader className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center">
+                {/* 使用内联 CSS 中的 .gradient-btn 类 */}
+                <div className="w-16 h-16 mx-auto mb-4 gradient-btn rounded-full flex items-center justify-center">
                   <Sparkles className="w-8 h-8 text-white" />
                 </div>
                 <CardTitle className="text-xl">AI 智能创作</CardTitle>
@@ -108,7 +113,7 @@ export default function Home() {
                   强大的 AI 引擎，根据您的创意生成独特的故事情节和人物设定
                 </p>
               </CardContent>
-            </Card>
+            </div>
 
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-br from-orange-50 to-orange-100">
               <CardHeader className="text-center">
@@ -202,20 +207,22 @@ export default function Home() {
               {
                 title: "小兔子的太空冒险",
                 description: "一个关于勇敢小兔子探索太空的温馨故事",
-                image: "https://placehold.co/500x300/E0E0E0/000000?text=Placeholder+1" // 替换为占位符图片
+                // 保持占位符图片，避免 Pexels 链接失效问题
+                image: "https://placehold.co/500x300/E0E0E0/000000?text=Placeholder+1"
               },
               {
                 title: "魔法森林的秘密",
                 description: "神奇的森林里住着会说话的动物朋友们",
-                image: "https://placehold.co/500x300/E0E0E0/000000?text=Placeholder+2" // 替换为占位符图片
+                image: "https://placehold.co/500x300/E0E0E0/000000?text=Placeholder+2"
               },
               {
                 title: "彩虹桥上的小公主",
                 description: "善良的小公主用爱心拯救了整个王国",
-                image: "https://placehold.co/500x300/E0E0E0/000000?text=Placeholder+3" // 替换为占位符图片
+                image: "https://placehold.co/500x300/E0E0E0/000000?text=Placeholder+3"
               }
             ].map((example, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden">
+              // 使用内联 CSS 中的 .card 类
+              <div key={index} className="card overflow-hidden"> {/* 替换 Card 组件为 div，并应用 .card 类 */}
                 <div className="aspect-video bg-gradient-to-br from-pink-200 to-orange-200 relative">
                   <img
                     src={example.image}
@@ -231,14 +238,14 @@ export default function Home() {
                     查看故事
                   </Button>
                 </CardContent>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-pink-500 via-orange-500 to-blue-500">
+      <section className="py-20 gradient-cta"> {/* 使用内联 CSS 中的 .gradient-cta 类 */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
             准备好创作您的第一个故事了吗？
