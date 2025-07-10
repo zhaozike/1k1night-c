@@ -16,6 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* 强制浏览器每次都重新加载 globals.css，绕过缓存 */}
+        <link rel="stylesheet" href={`/globals.css?v=${Date.now()}`} />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
