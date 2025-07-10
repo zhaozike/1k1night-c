@@ -1,12 +1,11 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  darkMode: ['class', 'dark'], 
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  // 启用深色模式
+  darkMode: ['class', 'dark'],
+  // 暂时清空 content 数组，这将禁用 Tailwind 的 Purging 功能
+  // 从而强制生成所有 Tailwind 实用类，用于诊断
+  content: [], // <--- 将这里改为 []
   theme: {
     container: {
       center: true,
@@ -17,7 +16,7 @@ const config: Config = {
     },
     extend: {
       colors: {
-        border: 'hsl(var(--border))', 
+        border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
@@ -50,7 +49,6 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // --- 您原始的 chart 颜色定义 ---
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',
@@ -58,7 +56,6 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
-        // -----------------------------
       },
       borderRadius: {
         lg: 'var(--radius)',
