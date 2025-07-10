@@ -35,8 +35,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-blue-50">
-      <Navigation 
-        user={user} 
+      <Navigation
+        user={user}
         onLogin={() => { setAuthMode('login'); setShowAuthModal(true); }}
         onRegister={() => { setAuthMode('register'); setShowAuthModal(true); }}
         onLogout={() => setUser(null)}
@@ -52,18 +52,18 @@ export default function Home() {
                 AI 驱动的儿童绘本创作
               </Badge>
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
               让想象力
               <span className="bg-gradient-to-r from-pink-500 via-orange-500 to-blue-500 bg-clip-text text-transparent">
                 无限绘本
               </span>
             </h1>
-            
+
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
               用 AI 的魔力，将您的创意瞬间变成专业的儿童绘本。精美插画、专业配音、多语言支持，让每个故事都成为孩子们的珍藏。
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={handleStartCreating}
@@ -72,7 +72,7 @@ export default function Home() {
                 <Sparkles className="w-5 h-5 mr-2" />
                 开始创作故事
               </Button>
-              
+
               <Button
                 variant="outline"
                 className="border-2 border-orange-300 text-orange-600 hover:bg-orange-50 px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
@@ -94,7 +94,7 @@ export default function Home() {
               结合最新的 AI 技术，为您提供专业级别的儿童绘本创作体验
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-br from-pink-50 to-pink-100">
               <CardHeader className="text-center">
@@ -164,7 +164,7 @@ export default function Home() {
               从创意到成品，只需几分钟时间
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-4 gap-8">
             {[
               { step: "1", title: "输入创意", desc: "描述你的故事主题和想法", icon: Wand2 },
@@ -196,29 +196,29 @@ export default function Home() {
               看看其他创作者都制作了什么样的精彩作品
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: "小兔子的太空冒险",
                 description: "一个关于勇敢小兔子探索太空的温馨故事",
-                image: "https://images.pexels.com/photos/6032511/pexels-photo-6032511.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop"
+                image: "https://placehold.co/500x300/E0E0E0/000000?text=Placeholder+1" // 替换为占位符图片
               },
               {
                 title: "魔法森林的秘密",
                 description: "神奇的森林里住着会说话的动物朋友们",
-                image: "https://images.pexels.com/photos/1619654/pexels-photo-1619654.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop"
+                image: "https://placehold.co/500x300/E0E0E0/000000?text=Placeholder+2" // 替换为占位符图片
               },
               {
                 title: "彩虹桥上的小公主",
                 description: "善良的小公主用爱心拯救了整个王国",
-                image: "https://images.pexels.com/photos/1619640/pexels-photo-1619640.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop"
+                image: "https://placehold.co/500x300/E0E0E0/000000?text=Placeholder+3" // 替换为占位符图片
               }
             ].map((example, index) => (
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden">
                 <div className="aspect-video bg-gradient-to-br from-pink-200 to-orange-200 relative">
-                  <img 
-                    src={example.image} 
+                  <img
+                    src={example.image}
                     alt={example.title}
                     className="w-full h-full object-cover"
                   />
