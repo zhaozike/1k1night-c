@@ -2,10 +2,9 @@
 const nextConfig = {
   // 确保输出目录为 'out'，用于静态导出
   output: 'export',
-  // 启用 Next.js 的 trailing slash，有助于静态文件路径的稳定性
-  trailingSlash: true,
-  // 禁用 trailing slash 重定向，避免不必要的跳转
-  skipTrailingSlashRedirect: true,
+  // 移除 trailingSlash 和 skipTrailingSlashRedirect，避免潜在干扰
+  // trailingSlash: true,
+  // skipTrailingSlashRedirect: true,
   // 指定构建输出目录
   distDir: 'out',
   eslint: {
@@ -26,8 +25,8 @@ const nextConfig = {
     optimizeCss: false, // 禁用 CSS 优化，避免潜在问题
     esmExternals: false, // 禁用 ESM 外部化，确保模块正确打包
   },
-  // 优化 webpack 配置以避免代理问题
-  webpack: (config, { isServer, dev }) => {
+  // 简化 webpack 配置，仅保留 fallback
+  webpack: (config, { isServer }) => {
     if (!isServer) {
       // 在客户端构建时，为 Node.js 核心模块添加 fallback，避免浏览器端报错
       config.resolve.fallback = {
@@ -35,20 +34,6 @@ const nextConfig = {
         fs: false, // 禁用对 Node.js 'fs' 模块的引用
       };
     }
-
-    // 确保 CSS 文件正确处理
-    // 注意：Next.js 13+ 通常会自动处理 CSS，这里是额外的保障
-    config.module.rules.push({
-      test: /\.css$/,
-      use: [
-        // 'style-loader' 和 'css-loader' 通常用于 Webpack 配置，
-        // Next.js 内部已集成，这里作为显式配置的示例或备用
-        'style-loader',
-        'css-loader',
-        'postcss-loader'
-      ],
-    });
-
     return config;
   },
   // 添加安全头部，增强网站安全性
