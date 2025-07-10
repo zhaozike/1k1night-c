@@ -3,11 +3,12 @@ import type { Config } from 'tailwindcss';
 const config: Config = {
   // 启用深色模式
   darkMode: ['class', 'dark'],
-  // 恢复 content 数组，以启用 Tailwind 的 Purging 功能，确保生产环境样式大小优化
+  // 确保 Tailwind CSS 扫描所有相关的组件文件
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}', // 确保扫描 src 目录，如果您的组件在 src 下
   ],
   theme: {
     container: {
@@ -18,10 +19,6 @@ const config: Config = {
       },
     },
     extend: {
-      // 添加字体系统配置，将 Inter 设置为默认 sans-serif 字体
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -85,7 +82,6 @@ const config: Config = {
       },
     },
   },
-  // 确保所有必要的插件正确加载
   plugins: [require('tailwindcss-animate')],
 };
 
