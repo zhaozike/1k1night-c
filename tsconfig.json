@@ -9,6 +9,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "forceConsistentCasingInFileNames": true, // <-- 建議添加此行
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -32,8 +33,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "out/types/**/*.ts"
+    ".next/types/**/*.ts"
+    // "out/types/**/*.ts" // 如果您沒有將類型文件輸出到此目錄，可以移除此行
   ],
   "exclude": [
     "node_modules"
